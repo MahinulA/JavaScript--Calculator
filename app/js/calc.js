@@ -124,10 +124,9 @@
         if(ObjectOne.number ==undefined){
             // ANYONE CLICKS EQUAL MULTIPLE TIMES
             console.log("do something");
-            // document.querySelector(".display-section").textContent = "";
+
             setTimeout(()=>{
                 document.querySelector(".js-result-after").insertAdjacentText("beforebegin", numberInit); //show result
-                // document.querySelector(".display-section").textContent = numberInit;
             }, 400);
         }else if(ObjectOne.number !=undefined){
             let x = ObjectOne.number;
