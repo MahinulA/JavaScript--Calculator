@@ -98,6 +98,9 @@
                 ObjectOne.signOp = OpetatorSign;
                 // document.querySelector(".display-section").textContent = result;
                 document.querySelector(".display-section").innerHTML = result + `<span class="text-container-display"></span>`;
+
+                // FIXING A BUG
+                
             }
 
         });
