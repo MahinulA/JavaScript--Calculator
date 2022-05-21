@@ -7,6 +7,18 @@
 })();
 
 
+// ICON SWITCH
+(function(){
+    let emojiContainer =document.querySelector(".emojis-js");
+    emojiContainer.addEventListener("mouseenter", ()=>{
+        emojiContainer.innerHTML= `<i class="fa-solid fa-face-laugh-squint"></i>`;
+    });
+    emojiContainer.addEventListener("mouseleave", ()=>{
+        emojiContainer.innerHTML= `<i class="fa-solid fa-face-smile-beam"></i>`;
+    });
+})();
+
+
 
 // CALCULATOR FUNCTIONALITIES
 //PUT INPUT NUMBER IN DISPLAY
@@ -138,4 +150,15 @@
             document.querySelector(".js-result-after").insertAdjacentText("beforebegin", result); //show result
         }
     });
+
+
+    // RESET FUNCTIONALITY
+    document.querySelector(".reset-btn-js").addEventListener("click", ()=>{
+        document.querySelector(".input-container").innerHTML = `<span class="js-input-after">0</span>`; //removing the input number
+        document.querySelector(".result-container").innerHTML =` <span class="js-result-after"></span>`; //removing result 
+        ObjectOne.number = "";
+        ObjectOne.signOp= "";
+        numberInit = "";
+        number ="";
+    })
 })();
