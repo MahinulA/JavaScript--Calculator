@@ -77,7 +77,7 @@
            
             numberInit = document.querySelector(".input-container").textContent;
             numberInit =numberInit.trim();
-            number = Number(numberInit); //working :final number output
+            number = Number(numberInit); //working :FINAL NUMBER OUTPUT
             // console.log(numberInit);
         });
     }
@@ -86,14 +86,13 @@
     let operationBTNInit=document.getElementsByClassName("js-operation-btn");
     
     let ObjectOne = new Object();
-    let ObjectTwo = new Object();
     for(i =0; i < operationBTNInit.length; i++){
         let operationBTN = operationBTNInit[i];
         operationBTN.addEventListener("click", ()=>{
             // console.log("operation button working");
             document.querySelector(".result-container").innerHTML =` <span class="js-result-after"></span>`; //removing result 
             // let numberInit = document.querySelector(".display-section").textContent;
-            // numberInit =numberInit.trim();
+            numberInit =numberInit.trim();
 
             let OpetatorSign = operationBTN.textContent;  //UPDATE: storing operation sign
   
@@ -156,9 +155,9 @@
     document.querySelector(".reset-btn-js").addEventListener("click", ()=>{
         document.querySelector(".input-container").innerHTML = `<span class="js-input-after">0</span>`; //removing the input number
         document.querySelector(".result-container").innerHTML =` <span class="js-result-after"></span>`; //removing result 
-        ObjectOne.number = "";
+        ObjectOne.number = undefined;
         ObjectOne.signOp= "";
         numberInit = "";
         number ="";
-    })
+    });
 })();
