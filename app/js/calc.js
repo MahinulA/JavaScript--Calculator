@@ -60,6 +60,10 @@
             console.log(firstValue + "/" + secondValue);
             return OperationResult;
         }
+        else if(OpSign == "%"){
+            let percentageDecimal = secondValue/100;
+
+        }
     }
 
     for(i=0; i < buttonEventInit.length; i++){
@@ -151,13 +155,50 @@
     });
 
 
+
     // RESET FUNCTIONALITY
-    document.querySelector(".reset-btn-js").addEventListener("click", ()=>{
+    const ResetFunction = () =>{
         document.querySelector(".input-container").innerHTML = `<span class="js-input-after">0</span>`; //removing the input number
         document.querySelector(".result-container").innerHTML =` <span class="js-result-after"></span>`; //removing result 
+        document.querySelector(".show-sign-container").innerHTML =` <span class="js-showsign-after"></span>`; //removing any sign 
         ObjectOne.number = undefined;
         ObjectOne.signOp= "";
         numberInit = "";
         number ="";
+    }
+    document.querySelector(".reset-btn-js").addEventListener("click", ()=>{
+        ResetFunction();
     });
+
+    // IF I CLICK THE PERCENTAGE BUTTON
+    let percentageButton =document.querySelector(".percentage-btn");
+    percentageButton.addEventListener("click", ()=>{
+        let InputContainerInnerHTML = document.querySelector('.input-container').innerHTML;
+        InputContainerInnerHTML = InputContainerInnerHTML.trim();
+        console.log(InputContainerInnerHTML);
+        let percentageText =percentageButton.textContent;
+        console.log(percentageText);
+        undefinedInput = (InputContainerInnerHTML == '<span class="js-input-after">0</span>'  || InputContainerInnerHTML == '<span class="js-input-after"></span>' || InputContainerInnerHTML == '<span class="js-input-after"> </span>' );
+        console.log(undefinedInput);
+        if(undefinedInput == true){
+            ResetFunction();
+        }
+        else if(undefinedInput == false){
+            // number GET
+            // var matches = str.match(/(\d+)/);
+            //DO CALCULATION AND STORE IT IN number variable
+            inputNumber = number/100;
+            console.log(inputNumber);
+            document.querySelector(".input-container").innerHTML = `<span class="js-input-after"></span>`; //removing the input number
+            setTimeout(()=>{
+                document.querySelector(".js-input-after").insertAdjacentText("beforebegin", inputNumber); //start putting numbers
+                numberInit = document.querySelector(".input-container").textContent;
+                numberInit =numberInit.trim();
+                number = Number(numberInit);
+            }, 100)
+        }
+    });
+
+
+    
 })();
